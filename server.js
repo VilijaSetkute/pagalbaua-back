@@ -11,7 +11,8 @@ const mainRouter = require('./routes/mainRoute')
 
 app.use((req, res, next) => {
     // Website you wish to allow to connect
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    // res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost");
     // Request methods you wish to allow
     res.setHeader(
         "Access-Control-Allow-Methods",

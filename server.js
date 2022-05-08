@@ -8,11 +8,11 @@ require('dotenv/config')
 
 const mainRouter = require('./routes/mainRoute')
 
-
+const origin = "http://localhost:3000"
 app.use((req, res, next) => {
     // Website you wish to allow to connect
     // res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost");
+    res.setHeader("Access-Control-Allow-Origin", origin);
     // Request methods you wish to allow
     res.setHeader(
         "Access-Control-Allow-Methods",
@@ -30,7 +30,6 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json())
-const origin = "http://localhost:3000"
 app.use(cors({credentials: true, origin: origin}))
 app.use(bodyParser.json())
 app.use('/', mainRouter)
